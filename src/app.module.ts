@@ -7,6 +7,7 @@ import { JoiValidationSchema } from './config/joi.validation';
 import { PlayersModule } from './players/players.module';
 import { TeamsModule } from './teams/teams.module';
 import { SeedModule } from './seed/seed.module';
+import { AuthModule } from './auth/auth.module';
 
 
 @Module({
@@ -19,7 +20,7 @@ import { SeedModule } from './seed/seed.module';
     MongooseModule.forRoot(process.env.MONGODB),
 
     PlayersModule, 
-    TeamsModule, SeedModule
+    TeamsModule, SeedModule, AuthModule
   ],
   controllers: [],
   providers: [],
