@@ -16,8 +16,8 @@ import { Player, PlayerSchema } from './entities/player.entity';
       },
     ])
   ],
-  controllers: [PlayersController],
-  providers: [PlayersService],
-  exports: [MongooseModule]
+  controllers: [ PlayersController ],
+  providers: [ PlayersService ],
+  exports: [ MongooseModule, PlayersService ]
 })
 export class PlayersModule {}

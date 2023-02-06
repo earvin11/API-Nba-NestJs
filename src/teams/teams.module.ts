@@ -13,8 +13,8 @@ import { Team, TeamSchema } from './entities/team.entity';
       }
     ])
   ],
-  controllers: [TeamsController],
-  providers: [TeamsService],
-  exports: [MongooseModule]
+  controllers: [ TeamsController ],
+  providers: [ TeamsService ],
+  exports: [ MongooseModule, TeamsService ]
 })
 export class TeamsModule {}

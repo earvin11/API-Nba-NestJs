@@ -6,6 +6,7 @@ import { EnvConfiguration } from './config/env.config';
 import { JoiValidationSchema } from './config/joi.validation';
 import { PlayersModule } from './players/players.module';
 import { TeamsModule } from './teams/teams.module';
+import { SeedModule } from './seed/seed.module';
 
 
 @Module({
@@ -18,7 +19,7 @@ import { TeamsModule } from './teams/teams.module';
     MongooseModule.forRoot(process.env.MONGODB),
 
     PlayersModule, 
-    TeamsModule
+    TeamsModule, SeedModule
   ],
   controllers: [],
   providers: [],
