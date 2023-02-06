@@ -1,4 +1,5 @@
 import { BadRequestException, Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { InjectModel } from '@nestjs/mongoose';
 import { isValidObjectId, Model } from 'mongoose';
 import { CreatePlayerDto } from './dto/create-player.dto';
@@ -8,11 +9,17 @@ import { Player } from './entities/player.entity';
 @Injectable()
 export class PlayersService {
 
+  private defaultLimit: number;
+
   constructor(
     @InjectModel( Player.name )
-    private readonly playerModel: Model<Player>
+    private readonly playerModel: Model<Player>,
 
-  ) {}
+    private readonly configService: ConfigService,
+
+  ) {
+    this.defaultLimit = configService.get<number>('defaultLimit');
+  }
 
   async create(createPlayerDto: CreatePlayerDto) {
 
@@ -31,7 +38,9 @@ export class PlayersService {
   async findAll() {
     try {
       const players = await this.playerModel.find()
-        .populate('team', 'name');
+        .limit(this.defaultLimit)
+        .populate('team', 'name')
+        .select('-__v');
       return players;
     } catch (error) {
       
