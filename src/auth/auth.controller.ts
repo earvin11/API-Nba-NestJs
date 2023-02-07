@@ -9,7 +9,7 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('register')
-  create(
+  createUser(
     @Body()
     createUserDto: CreateUserDto
   ) {
@@ -17,7 +17,7 @@ export class AuthController {
   }
 
   @Post('login')
-  login(
+  loginUser(
     @Body()
     loginUserDto: LoginUserDto
   ) {

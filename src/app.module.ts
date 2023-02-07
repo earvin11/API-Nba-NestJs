@@ -19,8 +19,10 @@ import { AuthModule } from './auth/auth.module';
 
     MongooseModule.forRoot(process.env.MONGODB),
 
-    PlayersModule, 
-    TeamsModule, SeedModule, AuthModule
+    PlayersModule,
+    TeamsModule,
+    SeedModule,
+    AuthModule
   ],
   controllers: [],
   providers: [],
