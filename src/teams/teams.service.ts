@@ -4,13 +4,17 @@ import { isValidObjectId, Model } from 'mongoose';
 import { CreateTeamDto } from './dto/create-team.dto';
 import { UpdateTeamDto } from './dto/update-team.dto';
 import { Team } from './entities/team.entity';
+import { Player } from '../players/entities/player.entity';
 
 @Injectable()
 export class TeamsService {
 
   constructor(
     @InjectModel( Team.name )
-    private readonly teamModel: Model<Team>
+    private readonly teamModel: Model<Team>,
+
+    @InjectModel( Player.name )
+    private readonly playerModel: Model<Player>
   ) {}
 
   async create(createTeamDto: CreateTeamDto) {
@@ -66,6 +70,15 @@ export class TeamsService {
 
   }
 
+  async findPlayers(id: string) {
+    try {
+      const players = await this.playerModel.find({ team: id });
+      return players;
+    } catch (error) {
+      
+    }
+  }
+
   async remove(id: string) {
     try {
       await this.teamModel.findByIdAndUpdate(id, {status: false});
@@ -75,3 +88,4 @@ export class TeamsService {
     }
   }
 }
+;

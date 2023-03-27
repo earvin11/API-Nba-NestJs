@@ -24,7 +24,13 @@ export class Player extends Document {
     position: string;
 
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Team' })
-    team: number;
+    team: string;
+
+    @Prop()
+    minPts: number;
+
+    @Prop()
+    careerHightPts: number;
 
 }
 

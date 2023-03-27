@@ -32,4 +32,12 @@ export class CreatePlayerDto {
     @IsOptional()
     team: string;
 
+    @IsNumber()
+    @IsOptional()
+    minPts: number;
+
+    @IsNumber()
+    @IsOptional()
+    careerHightPts: number;
+
 }

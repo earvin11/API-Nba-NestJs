@@ -7,6 +7,8 @@ interface SeedPlayer {
     weight: number;
     position: string;
     // team: string;
+    minPts: number;
+    careerHightPts: number;
 }
 
 interface SeedTeam {
@@ -60,7 +62,9 @@ export const initialData: SeedData = {
             age: 38,
             height: 2.06,
             weight: 110,
-            position: 'Small Forward', 
+            position: 'Small Forward',
+            minPts: 10,
+            careerHightPts: 69
         },
         {
             name: 'Wilt',
@@ -68,7 +72,9 @@ export const initialData: SeedData = {
             age: 100,
             height: 2.16,
             weight: 130,
-            position: 'Center', 
+            position: 'Center',
+            minPts: 15,
+            careerHightPts: 100
         },
         {
             name: 'Michael',
@@ -76,7 +82,9 @@ export const initialData: SeedData = {
             age: 100,
             height: 1.98,
             weight: 98,
-            position: 'Shooting Guard', 
+            position: 'Shooting Guard',
+            minPts: 12,
+            careerHightPts: 69
         },
         {
             name: 'Larry',
@@ -84,7 +92,9 @@ export const initialData: SeedData = {
             age: 100,
             height: 2.03,
             weight: 100,
-            position: 'Small Forward', 
+            position: 'Small Forward',
+            minPts: 10,
+            careerHightPts: 60 
         },
         {
             name: 'Patrick',
@@ -92,7 +102,9 @@ export const initialData: SeedData = {
             age: 100,
             height: 2.12,
             weight: 120,
-            position: 'Center', 
+            position: 'Center',
+            minPts: 8,
+            careerHightPts: 45 
         },
         {
             name: 'Allen',
@@ -100,7 +112,9 @@ export const initialData: SeedData = {
             age: 100,
             height: 1.81,
             weight: 80,
-            position: 'Shooting Guard', 
+            position: 'Shooting Guard',
+            minPts: 12,
+            careerHightPts: 65 
         },
         {
             name: 'Jerry',
@@ -108,7 +122,9 @@ export const initialData: SeedData = {
             age: 100,
             height: 2.03,
             weight: 108,
-            position: 'Shooting Guard', 
+            position: 'Shooting Guard',
+            minPts: 10,
+            careerHightPts: 69 
         },
     ]
 

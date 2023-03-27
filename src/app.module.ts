@@ -8,6 +8,8 @@ import { PlayersModule } from './players/players.module';
 import { TeamsModule } from './teams/teams.module';
 import { SeedModule } from './seed/seed.module';
 import { AuthModule } from './auth/auth.module';
+import { CommonModule } from './common/common.module';
+import { GamesModule } from './games/games.module';
 
 
 @Module({
@@ -22,7 +24,9 @@ import { AuthModule } from './auth/auth.module';
     PlayersModule,
     TeamsModule,
     SeedModule,
-    AuthModule
+    AuthModule,
+    CommonModule,
+    GamesModule
   ],
   controllers: [],
   providers: [],
